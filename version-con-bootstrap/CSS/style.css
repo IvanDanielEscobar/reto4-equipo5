@@ -1,0 +1,12 @@
+.icon-bar{
+    width: 60px; 
+    height: 60px; 
+    object-fit: cover;
+}
+
+.gold-logo {
+    max-height: 100px;
+}
+.carousel {
+    max-width: 500px;
+}
