@@ -1,14 +1,155 @@
-.icon-bar{
-    width: 60px; 
-    height: 60px; 
-    object-fit: cover;
+body {
+    background-color: #000;
+    color: #fff;
 }
 
 .gold-logo {
-    max-height: 100px;
+    max-height: 80px;
 }
-.carousel {
-    max-width: 500px;
+
+.icon-bar {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.seccion-inferior {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.seccion-inferior h2 {
+    color: #ffc107 !important;
+}
+
+/*Cervezas, Gaseosas, Aguas */
+.product-category {
+    background-color: #212529 !important;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.product-category button.btn-dark {
+    background-color: #212529 !important;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.75rem 1rem;
+    color: #ffc107 !important;
+}
+
+.product-category button.btn-dark:focus {
+    box-shadow: none;
+}
+
+.product-category .bi-chevron-down {
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-category .bi-chevron-down.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.options-container {
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+}
+
+/* Cerveza en Lata */
+.option-item {
+    background-color: #343a40;
+    border-radius: 0.3rem;
+    margin-bottom: 0.75rem;
+    transition: background-color 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.option-item:hover {
+    background-color: #495057;
+}
+
+.option-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 0.2rem;
+}
+
+.option-details h5 {
+    color: #fff;
+    margin-bottom: 0.2rem;
+}
+
+.option-details p {
+    font-size: 0.9rem;
+    color: #adb5bd;
+}
+
+.option-details .text-success {
+    color: #28a745 !important;
+    font-size: 1.1rem;
+}
+
+/* Quantity Controls and Add Button */
+.option-controls .quantity-btn {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #ffc107 !important;
+    color: #ffc107 !important;
+}
+
+.option-controls .quantity-input {
+    width: 45px;
+    text-align: center;
+    background-color: #495057;
+    border: 1px solid #6c757d;
+    color: #fff;
+}
+
+.option-controls .quantity-input:focus {
+    box-shadow: none;
+    border-color: #ffc107;
+}
+
+.option-controls .btn-success {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    font-size: 0.9rem;
+    padding: 0.375rem 0.75rem;
+}
+
+/* Responsiveness */
+@media (max-width: 576px) {
+    .option-item {
+        flex-direction: column;
+        align-items: flex-start !important;
+        text-align: left;
+    }
+
+    .option-img {
+        margin-bottom: 0.5rem;
+        margin-right: 0 !important;
+    }
+
+    .option-details {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        margin-right: 0 !important;
+    }
+
+    .option-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .option-controls .quantity-input {
+        flex-grow: 1;
+    }
 }
 
 .fixed-height-carousel {

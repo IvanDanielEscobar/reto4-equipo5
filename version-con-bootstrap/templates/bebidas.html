@@ -1,20 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>Bebidas - Gold Burguer</title>
 </head>
 
-<body>
+<body class="bg-black">
+    <nav class="navbar navbar-expand-lg bg-warning navbar-light p-1 shadow-lg sticky-top">
+        <section class="container-fluid">
+            <img src="../IMG/logo-gold.png" alt="logo gold" class="gold-logo img-fluid p-4">
+            <a class="navbar-brand fw-bold text-dark fs-3 me-auto" href="../index.html">
+                GOLD BURGUER
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <article class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Arma tu burguer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">Hamburguesas</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Bebidas</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Papas Fritas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-dark me-2 rounded">
+                    <i class="bi bi-geo-alt-fill"></i>
+                </button>
+                <button type="button" class="btn btn-dark rounded">
+                    <i class="bi bi-cart-fill"></i>
+                </button>
+            </article>
+        </section>
+    </nav>
 
+    <article class="d-flex justify-content-center align-items-center flex-wrap gap-4 py-3 bg-dark">
+        <a href="hamburguesas.html" class="text-decoration-none text-white d-flex flex-column align-items-center">
+            <img src="../IMG/icono-burguer.png" alt="Icono Hamburguesa" class="icon-bar mb-2">
+            <small class="fw-bold">Burguers</small>
+        </a>
+
+        <a href="papas.html" class="text-decoration-none text-white d-flex flex-column align-items-center">
+            <img src="../IMG/icono-papas.png" alt="Icono Papas Fritas" class="icon-bar mb-2">
+            <small class="fw-bold">Papas</small>
+        </a>
+
+        <a href="bebidas.html" class="text-decoration-none text-white d-flex flex-column align-items-center">
+            <img src="../IMG/icono-gaseosa.png" alt="Icono Bebidas" class="icon-bar mb-2">
+            <small class="fw-bold">Bebidas</small>
+        </a>
+    </article>
+
+    <section class="seccion-inferior container my-5">
+        <h2 class="text-center text-warning mb-4 fw-bold">Nuestras Bebidas</h2>
+
+        <div class="product-category bg-dark p-3 rounded shadow mb-3">
+            <button class="btn btn-dark w-100 text-start d-flex justify-content-between align-items-center fw-bold fs-4 text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCervezas" aria-expanded="false" aria-controls="collapseCervezas">
+                Cervezas
+                <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="collapse" id="collapseCervezas">
+                <p class="text-white-50 mt-2 mb-3">Cerveza artesanal, latas y de litro</p>
+                <div class="options-container">
+                    <div class="option-item d-flex align-items-center justify-content-between p-3 my-2 rounded">
+                        <img src="../IMG/cerveza_lata.jpg" alt="Cerveza Lata" class="img-fluid option-img me-3">
+                        <div class="option-details flex-grow-1 me-3">
+                            <h5 class="mb-1 text-white">Cerveza en Lata</h5>
+                            <p class="text-white-50 mb-0">Lata de 350ml</p>
+                            <span class="text-success fw-bold">$500</span>
+                        </div>
+                        <div class="option-controls d-flex align-items-center">
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="decrement">-</button>
+                            <input type="text" class="form-control form-control-sm text-center mx-1 quantity-input" value="1" readonly>
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="increment">+</button>
+                            <button class="btn btn-success btn-sm ms-2">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="option-item d-flex align-items-center justify-content-between p-3 my-2 rounded">
+                        <img src="../IMG/cerveza_litro.jpg" alt="Cerveza Litro" class="img-fluid option-img me-3">
+                        <div class="option-details flex-grow-1 me-3">
+                            <h5 class="mb-1 text-white">Cerveza de Litro</h5>
+                            <p class="text-white-50 mb-0">Botella de 1000ml</p>
+                            <span class="text-success fw-bold">$1200</span>
+                        </div>
+                        <div class="option-controls d-flex align-items-center">
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="decrement">-</button>
+                            <input type="text" class="form-control form-control-sm text-center mx-1 quantity-input" value="1" readonly>
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="increment">+</button>
+                            <button class="btn btn-success btn-sm ms-2">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-category bg-dark p-3 rounded shadow mb-3">
+            <button class="btn btn-dark w-100 text-start d-flex justify-content-between align-items-center fw-bold fs-4 text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGaseosas" aria-expanded="false" aria-controls="collapseGaseosas">
+                Gaseosas
+                <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="collapse" id="collapseGaseosas">
+                <p class="text-white-50 mt-2 mb-3">Coca, Fanta, Sprite</p>
+                <div class="options-container">
+                    <div class="option-item d-flex align-items-center justify-content-between p-3 my-2 rounded">
+                        <img src="../IMG/coca_fnegro.jpg" alt="Coca-Cola" class="img-fluid option-img me-3">
+                        <div class="option-details flex-grow-1 me-3">
+                            <h5 class="mb-1 text-white">Coca-Cola</h5>
+                            <p class="text-white-50 mb-0">Lata de 350ml</p>
+                            <span class="text-success fw-bold">$400</span>
+                        </div>
+                        <div class="option-controls d-flex align-items-center">
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="decrement">-</button>
+                            <input type="text" class="form-control form-control-sm text-center mx-1 quantity-input" value="1" readonly>
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="increment">+</button>
+                            <button class="btn btn-success btn-sm ms-2">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="option-item d-flex align-items-center justify-content-between p-3 my-2 rounded">
+                        <img src="../IMG/fanta_fnegro.jpg" alt="Fanta" class="img-fluid option-img me-3">
+                        <div class="option-details flex-grow-1 me-3">
+                            <h5 class="mb-1 text-white">Fanta</h5>
+                            <p class="text-white-50 mb-0">Lata de 350ml</p>
+                            <span class="text-success fw-bold">$400</span>
+                        </div>
+                        <div class="option-controls d-flex align-items-center">
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="decrement">-</button>
+                            <input type="text" class="form-control form-control-sm text-center mx-1 quantity-input" value="1" readonly>
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="increment">+</button>
+                            <button class="btn btn-success btn-sm ms-2">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="option-item d-flex align-items-center justify-content-between p-3 my-2 rounded">
+                        <img src="../IMG/sprite_fnegro.jpg" alt="Sprite" class="img-fluid option-img me-3">
+                        <div class="option-details flex-grow-1 me-3">
+                            <h5 class="mb-1 text-white">Sprite</h5>
+                            <p class="text-white-50 mb-0">Lata de 350ml</p>
+                            <span class="text-success fw-bold">$400</span>
+                        </div>
+                        <div class="option-controls d-flex align-items-center">
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="decrement">-</button>
+                            <input type="text" class="form-control form-control-sm text-center mx-1 quantity-input" value="1" readonly>
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="increment">+</button>
+                            <button class="btn btn-success btn-sm ms-2">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-category bg-dark p-3 rounded shadow mb-3">
+            <button class="btn btn-dark w-100 text-start d-flex justify-content-between align-items-center fw-bold fs-4 text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAguas" aria-expanded="false" aria-controls="collapseAguas">
+                Aguas
+                <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="collapse" id="collapseAguas">
+                <p class="text-white-50 mt-2 mb-3">Aguas con/sin gas y saborizadas</p>
+                <div class="options-container">
+                    <div class="option-item d-flex align-items-center justify-content-between p-3 my-2 rounded">
+                        <img src="../IMG/agua_con_gas.jpg" alt="Agua con gas" class="img-fluid option-img me-3">
+                        <div class="option-details flex-grow-1 me-3">
+                            <h5 class="mb-1 text-white">Agua con Gas</h5>
+                            <p class="text-white-50 mb-0">Botella de 500ml</p>
+                            <span class="text-success fw-bold">$300</span>
+                        </div>
+                        <div class="option-controls d-flex align-items-center">
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="decrement">-</button>
+                            <input type="text" class="form-control form-control-sm text-center mx-1 quantity-input" value="1" readonly>
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="increment">+</button>
+                            <button class="btn btn-success btn-sm ms-2">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="option-item d-flex align-items-center justify-content-between p-3 my-2 rounded">
+                        <img src="../IMG/agua_sin_gas.jpg" alt="Agua sin gas" class="img-fluid option-img me-3">
+                        <div class="option-details flex-grow-1 me-3">
+                            <h5 class="mb-1 text-white">Agua sin Gas</h5>
+                            <p class="text-white-50 mb-0">Botella de 500ml</p>
+                            <span class="text-success fw-bold">$250</span>
+                        </div>
+                        <div class="option-controls d-flex align-items-center">
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="decrement">-</button>
+                            <input type="text" class="form-control form-control-sm text-center mx-1 quantity-input" value="1" readonly>
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="increment">+</button>
+                            <button class="btn btn-success btn-sm ms-2">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="option-item d-flex align-items-center justify-content-between p-3 my-2 rounded">
+                        <img src="../IMG/agua_saborizada.jpg" alt="Agua saborizada" class="img-fluid option-img me-3">
+                        <div class="option-details flex-grow-1 me-3">
+                            <h5 class="mb-1 text-white">Agua Saborizada</h5>
+                            <p class="text-white-50 mb-0">Botella de 500ml (Varios sabores)</p>
+                            <span class="text-success fw-bold">$350</span>
+                        </div>
+                        <div class="option-controls d-flex align-items-center">
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="decrement">-</button>
+                            <input type="text" class="form-control form-control-sm text-center mx-1 quantity-input" value="1" readonly>
+                            <button class="btn btn-outline-warning btn-sm quantity-btn" data-action="increment">+</button>
+                            <button class="btn btn-success btn-sm ms-2">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Manejar los botones de cantidad (+/-)
+            document.querySelectorAll('.quantity-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const input = this.closest('.option-controls').querySelector('.quantity-input');
+                    let currentValue = parseInt(input.value);
+                    if (this.dataset.action === 'decrement') {
+                        currentValue = Math.max(1, currentValue - 1); // Asegura que no baje de 1
+                    } else if (this.dataset.action === 'increment') {
+                        currentValue += 1;
+                    }
+                    input.value = currentValue;
+                });
+            });
+
+            // Rotar el ícono de chevron en el botón de categoría
+            const collapseElements = document.querySelectorAll('.collapse');
+            collapseElements.forEach(collapseEl => {
+                collapseEl.addEventListener('show.bs.collapse', function () {
+                    const button = document.querySelector(`[data-bs-target="#${this.id}"]`);
+                    if (button) {
+                        button.querySelector('i').classList.add('rotate-180');
+                    }
+                });
+
+                collapseEl.addEventListener('hide.bs.collapse', function () {
+                    const button = document.querySelector(`[data-bs-target="#${this.id}"]`);
+                    if (button) {
+                        button.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
