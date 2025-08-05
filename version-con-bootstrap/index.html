@@ -5,16 +5,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-
+        xintegrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <title>Gold Burger</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 
-<body>
+<body class="bg-dark">
     <!--navbar-->
-    <!--menu desplegable-->
-    <!--promos-->
-    <!--footer-->
+    <nav class="navbar navbar-expand-lg bg-warning navbar-light p-1 shadow-lg sticky-top">
+
+        <section class="container-fluid">
+            <img src="IMG/logo-gold.png" alt="logo gold" class="gold-logo img-fluid p-4">
+            <a class="navbar-brand fw-bold text-dark fs-3 me-auto" href="templates/index.html">
+                GOLD BURGUER
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <article class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Arma tu burguer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="templates/about.html">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="templates/hamburguesas.html">Hamburguesas</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="templates/bebidas.html">Bebidas</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="templates/papas.html">Papas Fritas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="templates/ubicacion.html" class="btn btn-dark me-2 rounded">
+                    <i class="bi bi-geo-alt-fill"></i>
+                </a>
+                <a href="templates/carrito.html" class="btn btn-dark rounded">
+                    <i class="bi bi-cart-fill"></i>
+                </a>
+            </article>
+        </section>
+    </nav>
+    <!--Barra de iconos-->
+    <header class="container-fluid text-center mb-1 pt-5">
+
+        <article class="d-flex justify-content-center align-items-center flex-wrap gap-4 ">
+            <a href="templates/hamburguesas.html"
+                class="text-decoration-none text-white d-flex flex-column align-items-center">
+                <img src="IMG/icono-burguer.png" alt="Icono Hamburguesa" class="icon-bar mb-2">
+                <small class="fw-bold">Burguers</small>
+            </a>
+
+            <a href="templates/papas.html"
+                class="text-decoration-none text-white d-flex flex-column align-items-center">
+                <img src="IMG/icono-papas.png" alt="Icono Papas Fritas" class="icon-bar  mb-2">
+                <small class="fw-bold">Fries</small>
+            </a>
+
+            <a href="templates/bebidas.html"
+                class="text-decoration-none text-white d-flex flex-column align-items-center">
+                <img src="IMG/icono-gaseosa.png" alt="Icono Bebidas" class="icon-bar mb-2">
+                <small class="fw-bold">Bebidas</small>
+            </a>
+
+        </article>
+    </header>
+
+    <main>
+        <section class="container my-5">
+            <h2 class="text-warning text-center mb-5 display-4 fw-bold">Explora nuestro Menú</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!--Burger Card -->
+                <div class="col">
+                    <div class="card bg-dark text-white border border-warning shadow-lg h-100 rounded-3">
+                        <img src="IMG/Gold_Burguer_Doble.jpeg" class="card-img-top rounded-top-3 h-50"
+                            alt="Featured Burger">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-warning fw-bold fs-4">La Clásica Gold</h5>
+                            <p class="card-text text-white-50">Nuestra hamburguesa insignia con doble carne, queso
+                                cheddar, bacon y salsa especial.</p>
+                            <div class="mt-auto">
+                                <a href="templates/hamburguesas.html" class="btn btn-warning fw-bold w-100">Ver
+                                    Hamburguesas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- papas Card -->
+                <div class="col">
+                    <div class="card bg-dark text-white border border-warning shadow-lg h-100 rounded-3">
+                        <img src="IMG/papas1.jpg" class="card-img-top rounded-top-3 h-50" alt="Featured Fries">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-warning fw-bold fs-4">Papas con Cheddar</h5>
+                            <p class="card-text text-white-50">Crujientes papas fritas bañadas en nuestra deliciosa
+                                salsa cheddar.</p>
+                            <div class="mt-auto">
+                                <a href="templates/papas.html" class="btn btn-warning fw-bold w-100">Ver Papas
+                                    Fritas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- bebidas Card -->
+                <div class="col">
+                    <div class="card bg-dark text-white border border-warning shadow-lg h-100 rounded-3">
+                        <img src="IMG/0ad52d31-8b92-4c6c-b735-2224367d45c2.png" class="card-img-top rounded-top-3 h-50"
+                            alt="Featured Drink">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-warning fw-bold fs-4">Bebidas Refrescantes</h5>
+                            <p class="card-text text-white-50">Acompaña tu comida con nuestra selección de bebidas
+                                frías.</p>
+                            <div class="mt-1">
+                                <a href="templates/bebidas.html" class="btn btn-warning fw-bold w-100">Ver Bebidas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--Sección del footer-->
+    <footer class="bg-black text-center py-4 mt-5">
+        <a href="https://wa.me/+543585147240/" target="_blank" class="mx-3">
+            <img src="IMG/icono_wsp.jpeg" alt="WhatsApp" class="footer-icon">
+        </a>
+        <a href="https://www.instagram.com/goldburger.rc/" target="_blank" class="mx-3">
+            <img src="IMG/icono_instagram.png" alt="Instagram" class="footer-icon">
+        </a>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
