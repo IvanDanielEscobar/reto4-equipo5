@@ -12,37 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/papas_style.css" />
 
-    <style>
-        :root {
-            --md-sys-color-primary: #ffc107;
-            /* dorado */
-        }
-
-        body {
-            background-color: #121212;
-            color: white;
-            font-family: Roboto, sans-serif;
-        }
-
-        .gold-logo {
-            height: 60px;
-        }
-
-        .icon-bar {
-            width: 60px;
-        }
-
-        .footer-icon {
-            width: 40px;
-        }
-
-        .fixed-height-carousel img {
-            height: 250px;
-            object-fit: cover;
-        }
-    </style>
 </head>
 
 <body>
@@ -91,13 +62,6 @@
                     </md-menu-item>
                 </md-menu>
 
-                <script type="module">
-                    const anchorEl = document.querySelector("#productos-anchor");
-                    const menuEl = document.querySelector("#productos-menu");
-                    anchorEl.addEventListener("click", () => {
-                        menuEl.open = !menuEl.open;
-                    });
-                </script>
             </section>
 
             <!-- Botones a la derecha -->
@@ -210,6 +174,30 @@
             <img src="../IMG/icono_instagram.png" alt="Instagram" class="footer-icon" />
         </a>
     </footer>
+
+    <script>
+        // Menu toggle
+        const anchorEl = document.querySelector('#productos-anchor');
+        const menuEl = document.querySelector('#productos-menu');
+        anchorEl.addEventListener('click', () => menuEl.open = !menuEl.open);
+
+        // Cantidad
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.querySelectorAll('.product-row').forEach(row => {
+                const qtyEl = row.querySelector('.qty');
+                let qty = 1;
+                row.querySelector('.minus').addEventListener('click', () => {
+                    if (qty > 1) { qty--; qtyEl.textContent = qty; }
+                });
+                row.querySelector('.plus').addEventListener('click', () => {
+                    qty++; qtyEl.textContent = qty;
+                });
+                row.querySelector('.add-btn').addEventListener('click', () => {
+                    console.log('Agregado al carrito:', row.querySelector('h3').textContent, 'Cantidad:', qty);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
