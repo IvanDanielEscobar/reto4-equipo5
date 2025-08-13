@@ -1,14 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamburguesas - GOLD BURGUER</title>
+
+    <!-- Material Web CDN -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@material/web/all.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="../CSS/papas_style.css" />
+
 </head>
 
 <body>
+    <!-- Navbar -->
+    <nav style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        background-color: #ffc107;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      ">
+        <!-- Logo y nombre -->
+        <article style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.5rem 1rem;
+          background-color: var(--md-sys-color-primary);
+          position: sticky;
+        ">
+            <img src="../IMG/logo-gold.png" alt="logo gold" class="gold-logo" />
+            <span style="font-weight: bold; font-size: 1.5rem; color: #212529">GOLD BURGUER</span>
+        </article>
 
+        <!-- Enlaces -->
+        <article style="display: flex; align-items: center; gap: 1rem">
+            <a href="#" style="text-decoration: none; color: #212529">Arma tu burguer</a>
+            <a href="sobreNosotros.html" style="text-decoration: none; color: #212529">Sobre Nosotros</a>
+
+            <section>
+                <md-filled-button id="productos-anchor">Productos</md-filled-button>
+                <md-menu positioning="fixed" id="productos-menu" anchor="productos-anchor">
+                    <md-menu-item>
+                        <article slot="headline">Hamburguesas</article>
+                    </md-menu-item>
+
+                    <md-menu-item>
+                        <article slot="headline">Papas</article>
+                    </md-menu-item>
+
+                    <md-menu-item>
+                        <article slot="headline">Bebidas</article>
+                    </md-menu-item>
+                </md-menu>
+
+            </section>
+
+            <!-- Botones a la derecha -->
+            <div style="display: flex; gap: 0.5rem">
+                <a href="ubicacion.html">
+                    <md-filled-tonal-icon-button>
+                        <span class="material-icons">location_on</span>
+                    </md-filled-tonal-icon-button>
+                </a>
+                <a href="carrito.html">
+                    <md-filled-tonal-icon-button>
+                        <span class="material-icons">shopping_cart</span>
+                    </md-filled-tonal-icon-button>
+                </a>
+            </div>
+        </article>
+    </nav>
+
+    <!-- icnos header -->
+    <header style="display: flex; justify-content: center; gap: 2em; margin: 2em 0">
+        <a href="hamburguesas.html" style="text-decoration: none; color: white; text-align: center">
+            <img src="../IMG/icono-burguer.png" alt="icon-burguer" class="icon-bar" />
+            <article>
+                <small class="fw-bold">Burguers</small>
+            </article>
+        </a>
+        <a href="papas.html" style="text-decoration: none; color: white; text-align: center">
+            <img src="../IMG/icono-papas.png" class="icon-bar" />
+            <article>
+                <small class="fw-bold">Fries</small>
+            </article>
+        </a>
+        <a href="bebidas.html" style="text-decoration: none; color: white; text-align: center">
+            <img src="../IMG/icono-gaseosa.png" class="icon-bar" />
+            <div><small class="fw-bold">Bebidas</small></div>
+        </a>
+    </header>
+
+    <!-- titulo -->
+    <h2 style="
+        text-align: center;
+        color: gold;
+        font-size: 2.5rem;
+        font-weight: bold;
+      ">
+        Fries
+    </h2>
+    <!-- Productos -->
+
+    <!-- main -->
+    <main style="
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        padding: 2rem;
+      ">
+        <md-elevated-card style="max-width: 600px; width: 100%; background-color: #1e1e1e">
+            <div style="padding: 16px">
+                <h2 style="color: gold; text-align: center">
+                    NUESTRAS DELICIAS FRITAS
+                </h2>
+
+                <!-- Producto 1 -->
+                <div style="
+              display: flex;
+              justify-content: space-between;
+              margin-top: 1rem;
+              gap: 1rem;
+            ">
+                    <div style="flex: 1">
+                        <h3>BIG FRIES</h3>
+                        <p style="color: #ccc">Porción GRANDE de papas fritas.</p>
+                    </div>
+                    <div style="text-align: right">
+                        <div style="display: flex; align-items: center; gap: 4px">
+                            <md-outlined-button>-</md-outlined-button>
+                            <span>1</span>
+                            <md-outlined-button>+</md-outlined-button>
+                        </div>
+                        <md-filled-button style="margin-top: 8px">
+                            <span class="material-icons">add_shopping_cart</span> Agregar
+                        </md-filled-button>
+                        <h4 style="color: gold; margin-top: 4px">$4.000</h4>
+                    </div>
+                </div>
+            </div>
+        </md-elevated-card>
+
+        <!-- Carrusel -->
+        <section style="width: 400px">
+            <img src="../IMG/papas.jpg" alt="Papas 1" class="fixed-height-carousel" style="width: 100%" />
+            <img src="../IMG/papas1.jpg" alt="Papas 2" class="fixed-height-carousel"
+                style="width: 100%; margin-top: 1rem" />
+            <img src="../IMG/papas2.jpg" alt="Papas 3" class="fixed-height-carousel"
+                style="width: 100%; margin-top: 1rem" />
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer style="
+        background-color: black;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 3rem;
+      ">
+        <a href="https://wa.me/+543585147240/" target="_blank" style="margin: 0 1rem">
+            <img src="../IMG/icono_wsp.jpeg" alt="WhatsApp" class="footer-icon" />
+        </a>
+        <a href="https://www.instagram.com/goldburger.rc/" target="_blank" style="margin: 0 1rem">
+            <img src="../IMG/icono_instagram.png" alt="Instagram" class="footer-icon" />
+        </a>
+    </footer>
+
+    <script>
+        // Menu toggle
+        const anchorEl = document.querySelector('#productos-anchor');
+        const menuEl = document.querySelector('#productos-menu');
+        anchorEl.addEventListener('click', () => menuEl.open = !menuEl.open);
+
+        // Cantidad
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.querySelectorAll('.product-row').forEach(row => {
+                const qtyEl = row.querySelector('.qty');
+                let qty = 1;
+                row.querySelector('.minus').addEventListener('click', () => {
+                    if (qty > 1) { qty--; qtyEl.textContent = qty; }
+                });
+                row.querySelector('.plus').addEventListener('click', () => {
+                    qty++; qtyEl.textContent = qty;
+                });
+                row.querySelector('.add-btn').addEventListener('click', () => {
+                    console.log('Agregado al carrito:', row.querySelector('h3').textContent, 'Cantidad:', qty);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

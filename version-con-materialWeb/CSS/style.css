@@ -1,0 +1,155 @@
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+.gold-logo {
+    width: 80px;
+    height: auto;
+}
+
+.icon-bar {
+    width: 50px;
+    height: auto;
+}
+
+.text-warning-custom {
+    color: #ffc107;
+}
+
+.bg-warning-custom {
+    background-color: #ffc107;
+}
+
+.bg-dark-custom {
+    background-color: #ffc107;
+}
+
+.text-success-custom {
+    color: #198754;
+}
+
+md-top-app-bar {
+    --md-sys-color-primary: #ffc107;
+    --md-sys-color-on-primary: #212529;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.category-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.category-nav-item small {
+    font-weight: bold;
+    margin-top: 0.25rem;
+}
+
+.product-category-md {
+    background-color: #212529;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.product-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    color: #ffc107;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+}
+
+.product-category-content {
+    padding-top: 1rem;
+    display: none;
+}
+
+.product-category-content.show {
+    display: block;
+}
+
+.product-category-header i {
+    transition: transform 0.3s ease;
+}
+
+.product-category-header.rotated i {
+    transform: rotate(180deg);
+}
+
+md-card {
+    background-color: #424242;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.option-img-md {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 1rem;
+}
+
+.option-details-md {
+    flex-grow: 1;
+}
+
+.option-details-md h5 {
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+
+.option-details-md p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.option-details-md span {
+    color: #198754;
+    font-weight: bold;
+}
+
+.option-controls-md {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-input-md {
+    width: 40px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    margin: 0 0.5rem;
+    border-radius: 4px;
+    padding: 0.25rem;
+}
+
+md-button {
+    --md-filled-button-container-color: #198754;
+    --md-filled-button-label-text-color: #fff;
+    --md-text-button-label-text-color: #ffc107;
+}
+
+md-icon-button {
+    color: #ffc107;
+}
