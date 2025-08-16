@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://unpkg.com/material-web@1.0.0/dist/themes/v3.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
@@ -13,39 +14,57 @@
 </head>
 
 <body class="bg-black">
-    <md-top-app-bar scrolled>
-        <md-icon-button slot="navigation-icon">
-            <i class="bi bi-list"></i>
-        </md-icon-button>
-        <span slot="headline" class="fw-bold fs-3 me-auto">
-            <img src="../IMG/logo-gold.png" alt="logo gold" class="gold-logo img-fluid p-2 me-2">
-            GOLD BURGUER
-        </span>
-        <md-icon-button slot="action-items">
-            <i class="bi bi-geo-alt-fill"></i>
-        </md-icon-button>
-        <md-icon-button slot="action-items">
-            <i class="bi bi-cart-fill"></i>
-        </md-icon-button>
-    </md-top-app-bar>
+    <nav style="
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      background-color: #ffc107;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    ">
 
-    <div class="d-flex justify-content-center align-items-center flex-wrap gap-4 py-3 bg-dark-custom">
-        <a href="hamburguesas.html" class="category-nav-item">
-            <img src="../IMG/icono-burguer.png" alt="Icono Hamburguesa" class="icon-bar mb-2">
-            <small class="fw-bold">Burguers</small>
-        </a>
+        <!-- Logo y nombre -->
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <img src="../IMG/logo-gold.png" alt="logo gold" style="height: 48px;">
+            <span style="font-weight: bold; font-size: 1.5rem; color: #212529;">GOLD BURGUER</span>
+        </div>
 
-        <a href="papas.html" class="category-nav-item">
-            <img src="../IMG/icono-papas.png" alt="Icono Papas Fritas" class="icon-bar mb-2">
-            <small class="fw-bold">Papas</small>
-        </a>
+        <!-- Enlaces -->
+        <div style="display: flex; align-items: center; gap: 2rem;">
+            <a href="#" style="text-decoration: none; color: #212529;">Arma tu burguer</a>
+            <a href="sobreNosotros.html" style="text-decoration: none; color: #212529;">Sobre Nosotros</a>
 
-        <a href="bebidas.html" class="category-nav-item">
-            <img src="../IMG/icono-gaseosa.png" alt="Icono Bebidas" class="icon-bar mb-2">
-            <small class="fw-bold">Bebidas</small>
-        </a>
-    </div>
+            <div style="margin: 16px;">
+                <md-filled-button id="usage-fixed-anchor">Productos</md-filled-button>
+            </div>
 
+            <!-- Fixed menus do not require a common ancestor with the anchor. -->
+            <md-menu positioning="fixed" id="usage-fixed" anchor="usage-fixed-anchor">
+                <md-menu-item>
+                    <div slot="headline"><a href="hamburguesas.html" style="text-decoration: none;">Hamburguesas</a>
+                    </div>
+                </md-menu-item>
+                <md-menu-item>
+                    <div slot="headline"><a href="hamburguesas.html" style="text-decoration: none;">Bebidas</a></div>
+                </md-menu-item>
+                <md-menu-item>
+                    <div slot="headline"><a href="hamburguesas.html" style="text-decoration: none;">Papas</a></div>
+                </md-menu-item>
+            </md-menu>
+
+            <!-- Botones a la derecha -->
+            <div style="display: flex; gap: 0.5rem;">
+                <md-filled-tonal-icon-button>
+                    <a href="ubicacion.html"><span class="material-icons">location_on</span></a>
+                </md-filled-tonal-icon-button>
+                <md-filled-tonal-icon-button>
+                    <a href="carrito.html"><span class="material-icons">shopping_cart</span></a>
+                </md-filled-tonal-icon-button>
+            </div>
+        </div>
+    </nav>
     <section class="container my-5">
         <h2 class="text-center text-warning-custom mb-4 fw-bold">Nuestras Bebidas</h2>
 

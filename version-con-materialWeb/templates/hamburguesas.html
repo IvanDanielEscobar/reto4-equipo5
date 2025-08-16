@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hamburguesas - GOLD BURGUER</title>
 
   <!-- Material Web CDN -->
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@material/web/all.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  <script type="module">
+    import '@material/web/all.js';
+    import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="../CSS/style.css">
 
-  <style>
-    body {
-      background-color: #121212;
-      color: white;
-      font-family: Roboto, sans-serif;
-    }
-    .gold-logo {
-      height: 60px;
-    }
-    .icon-bar {
-      width: 60px;
-    }
-    .footer-icon {
-      width: 40px;
-    }
-    .fixed-height-carousel img {
-      height: 250px;
-      object-fit: cover;
-    }
-  </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
-    <nav style="
+  <nav style="
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -47,42 +40,34 @@
       top: 0;
       z-index: 1000;
     ">
-    
-      <!-- Logo y nombre -->
-      <div style="display: flex; align-items: center; gap: 1rem;">
-        <img src="../IMG/logo-gold.png" alt="logo gold" style="height: 48px;">
-        <span style="font-weight: bold; font-size: 1.5rem; color: #212529;">GOLD BURGUER</span>
+
+    <!-- Logo y nombre -->
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <img src="../IMG/logo-gold.png" alt="logo gold" style="height: 48px;">
+      <span style="font-weight: bold; font-size: 1.5rem; color: #212529;">GOLD BURGUER</span>
+    </div>
+
+    <!-- Enlaces -->
+    <div style="display: flex; align-items: center; gap: 2rem;">
+      <a href="#" style="text-decoration: none; color: #212529;">Arma tu burguer</a>
+      <a href="sobreNosotros.html" style="text-decoration: none; color: #212529;">Sobre Nosotros</a>
+
+      <div style="margin: 16px;">
+        <md-filled-button id="usage-fixed-anchor">Productos</md-filled-button>
       </div>
-    
-        <!-- Enlaces -->
-        <div style="display: flex; align-items: center; gap: 2rem;">
-        <a href="#" style="text-decoration: none; color: #212529;">Arma tu burguer</a>
-        <a href="sobreNosotros.html" style="text-decoration: none; color: #212529;">Sobre Nosotros</a>
 
-        <div style="margin: 16px;">
-          <md-filled-button id="usage-fixed-anchor">Productos</md-filled-button>
-        </div>
+      <md-menu positioning="fixed" id="usage-fixed" anchor="usage-fixed-anchor">
+        <md-menu-item>
+          <div slot="headline"><a href="hamburguesas.html" style="text-decoration: none;">Hamburguesas</a></div>
+        </md-menu-item>
+        <md-menu-item>
+          <div slot="headline"><a href="bebidas.html" style="text-decoration: none;">Bebidas</a></div>
+        </md-menu-item>
+        <md-menu-item>
+          <div slot="headline"><a href="papas.html" style="text-decoration: none;">Papas</a></div>
+        </md-menu-item>
+      </md-menu>
 
-        <!-- Fixed menus do not require a common ancestor with the anchor. -->
-        <md-menu positioning="fixed" id="usage-fixed" anchor="usage-fixed-anchor">
-          <md-menu-item>
-            <div slot="headline">Hamburguesas</div>
-          </md-menu-item>
-          <md-menu-item>
-            <div slot="headline">Bebidas</div>
-          </md-menu-item>
-          <md-menu-item>
-            <div slot="headline">Papas</div>
-          </md-menu-item>
-        </md-menu>
-
-        <script type="module">
-          const anchorEl = document.body.querySelector('#usage-fixed-anchor');
-          const menuEl = document.body.querySelector('#usage-fixed');
-        
-          anchorEl.addEventListener('click', () => { menuEl.open = !menuEl.open; });
-        </script>
-    
       <!-- Botones a la derecha -->
       <div style="display: flex; gap: 0.5rem;">
         <md-filled-tonal-icon-button>
@@ -92,170 +77,180 @@
           <a href="carrito.html"><span class="material-icons">shopping_cart</span></a>
         </md-filled-tonal-icon-button>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!--Barra de iconos-->
-    <header style="display: flex; justify-content: center; gap: 2em; margin: 2em 0">
-        <a href="hamburguesas.html" style="text-decoration: none; color: white; text-align: center">
-            <img src="../IMG/icono-burguer.png" alt="icon-burguer" class="icon-bar" />
-            <article>
-                <small class="fw-bold">Burguers</small>
-            </article>
-        </a>
-        <a href="papas.html" style="text-decoration: none; color: white; text-align: center">
-            <img src="../IMG/icono-papas.png" class="icon-bar" />
-            <article>
-                <small class="fw-bold">Fries</small>
-            </article>
-        </a>
-        <a href="bebidas.html" style="text-decoration: none; color: white; text-align: center">
-            <img src="../IMG/icono-gaseosa.png" class="icon-bar" />
-            <div><small class="fw-bold">Bebidas</small></div>
-        </a>
-    </header>
+  <!--Barra de iconos-->
+  <header style="display: flex; justify-content: center; gap: 2em; margin: 2em 0">
+    <a href="hamburguesas.html" style="text-decoration: none; color: white; text-align: center">
+      <img src="../IMG/icono-burguer.png" alt="icon-burguer" class="icon-bar" />
+      <article>
+        <small class="fw-bold">Burguers</small>
+      </article>
+    </a>
+    <a href="papas.html" style="text-decoration: none; color: white; text-align: center">
+      <img src="../IMG/icono-papas.png" class="icon-bar" />
+      <article>
+        <small class="fw-bold">Fries</small>
+      </article>
+    </a>
+    <a href="bebidas.html" style="text-decoration: none; color: white; text-align: center">
+      <img src="../IMG/icono-gaseosa.png" class="icon-bar" />
+      <div><small class="fw-bold">Bebidas</small></div>
+    </a>
+  </header>
 
-    <!-- Titulo -->
-    <h2 style="text-align: center; color: gold; margin-bottom: 2rem; font-size: 2.5rem; font-weight: bold;">
-      HAMBURGUESAS
-    </h2>
+  <!-- Titulo -->
+  <h2 style="text-align: center; color: gold; margin-bottom: 2rem; font-size: 2.5rem; font-weight: bold;">
+    HAMBURGUESAS
+  </h2>
 
-    <!-- Productos -->
-    <section style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-      <md-elevated-card style="max-width: 600px; width: 100%; background-color: #1e1e1e;">
-        <div style="padding: 16px;">
-          <h2 style="color: gold; text-align: center;">VIVI UNA EXPERIENCIA DE ORO</h2>
+  <!-- Productos -->
+  <section style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+    <md-elevated-card style="max-width: 600px; width: 100%; background-color: #1e1e1e;">
+      <div style="padding: 16px;">
+        <h2 style="color: gold; text-align: center;">VIVI UNA EXPERIENCIA DE ORO</h2>
 
-          <!-- Ejemplo producto -->
-          <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
-            <div style="flex: 1;">
-              <h3>SIMPLE BIG GOLD</h3>
-              <p style="color: #ccc;">Pan de papa, medallón de carne smasheado, cheddar, lechuga, cebolla en brunoise, pepinillos y nuestra salsa gold.</p>
-            </div>
-            <div style="text-align: right;">
-              <div style="display: flex; align-items: center; gap: 4px;">
-                <md-outlined-button>-</md-outlined-button>
-                <span>1</span>
-                <md-outlined-button>+</md-outlined-button>
-              </div>
-              <md-filled-button style="margin-top: 8px;">
-                <span class="material-icons">add_shopping_cart</span> Agregar
-              </md-filled-button>
-              <h4 style="color: gold; margin-top: 4px;">$10.000</h4>
-            </div>
+        <!-- Ejemplo producto -->
+        <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
+          <div style="flex: 1;">
+            <h3>SIMPLE BIG GOLD</h3>
+            <p style="color: #ccc;">Pan de papa, medallón de carne smasheado, cheddar, lechuga, cebolla en brunoise,
+              pepinillos y nuestra salsa gold.</p>
           </div>
-         <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
-            <div style="flex: 1;">
-              <h3>GOLD CLASSIC SIMPLE</h3>
-              <p style="color: #ccc;">Pan de papa, medallón de carne smasheado, cheddar, bacon, lechuga, tomate, cebolla en brunoise, ketchup, mostaza y nuestra salsa gold.</p>
+          <div style="text-align: right;">
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <md-outlined-button>-</md-outlined-button>
+              <span>1</span>
+              <md-outlined-button>+</md-outlined-button>
             </div>
-            <div style="text-align: right;">
-              <div style="display: flex; align-items: center; gap: 4px;">
-                <md-outlined-button>-</md-outlined-button>
-                <span>1</span>
-                <md-outlined-button>+</md-outlined-button>
-              </div>
-              <md-filled-button style="margin-top: 8px;">
-                <span class="material-icons">add_shopping_cart</span> Agregar
-              </md-filled-button>
-              <h4 style="color: gold; margin-top: 4px;">$10.500</h4>
-            </div>
-         </div>
-         <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
-            <div style="flex: 1;">
-              <h3>GOLD BURGUER SIMPLE</h3>
-              <p style="color: #ccc;">Pan de papa, medallón de carne smasheado, cheddar, bacon, lechuga, tomate, cebolla en brunoise, pepinillos y nuestra salsa gold.</p>
-            </div>
-            <div style="text-align: right;">
-              <div style="display: flex; align-items: center; gap: 4px;">
-                <md-outlined-button>-</md-outlined-button>
-                <span>1</span>
-                <md-outlined-button>+</md-outlined-button>
-              </div>
-              <md-filled-button style="margin-top: 8px;">
-                <span class="material-icons">add_shopping_cart</span> Agregar
-              </md-filled-button>
-              <h4 style="color: gold; margin-top: 4px;">$10.300</h4>
-            </div>
-         </div>
-         <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
-            <div style="flex: 1;">
-              <h3>GOLD VEGGIE SIMPLE</h3>
-              <p style="color: #ccc;">Pan de papa, medallón VEGGIE, cheddar, lechuga, tomate, cebolla en brunoise y nuestra salsa gold.</p>
-            </div>
-            <div style="text-align: right;">
-              <div style="display: flex; align-items: center; gap: 4px;">
-                <md-outlined-button>-</md-outlined-button>
-                <span>1</span>
-                <md-outlined-button>+</md-outlined-button>
-              </div>
-              <md-filled-button style="margin-top: 8px;">
-                <span class="material-icons">add_shopping_cart</span> Agregar
-              </md-filled-button>
-              <h4 style="color: gold; margin-top: 4px;">$10.000</h4>
-            </div>
-         </div>
-         <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
-            <div style="flex: 1;">
-              <h3>DOBLE BIG GOLD</h3>
-              <p style="color: #ccc;">Pan de papa, doble medallón de carne smasheado, doble cheddar, lechuga, cebolla en brunoise, pepinillos y nuestra salsa gold.</p>
-            </div>
-            <div style="text-align: right;">
-              <div style="display: flex; align-items: center; gap: 4px;">
-                <md-outlined-button>-</md-outlined-button>
-                <span>1</span>
-                <md-outlined-button>+</md-outlined-button>
-              </div>
-              <md-filled-button style="margin-top: 8px;">
-                <span class="material-icons">add_shopping_cart</span> Agregar
-              </md-filled-button>
-              <h4 style="color: gold; margin-top: 4px;">$11.500</h4>
-            </div>
-         </div>
-         <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
-            <div style="flex: 1;">
-              <h3>GOLD CLASSIC DOBLE</h3>
-              <p style="color: #ccc;">Pan de papa, doble medallón de carne smasheado, doble cheddar, bacon, cebolla en brunoise, ketchup, mostaza y nuestra salsa gold.</p>
-            </div>
-            <div style="text-align: right;">
-              <div style="display: flex; align-items: center; gap: 4px;">
-                <md-outlined-button>-</md-outlined-button>
-                <span>1</span>
-                <md-outlined-button>+</md-outlined-button>
-              </div>
-              <md-filled-button style="margin-top: 8px;">
-                <span class="material-icons">add_shopping_cart</span> Agregar
-              </md-filled-button>
-              <h4 style="color: gold; margin-top: 4px;">$12.000</h4>
-            </div>
-         </div>
-         <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
-            <div style="flex: 1;">
-              <h3>GOLD BURGUER DOBLE</h3>
-              <p style="color: #ccc;">Pan de papa, doble medallón de carne smasheado, doble cheddar, bacon, lejchuga, tomate, cebolla en brunoise, pepinillos y nuestra salsa gold.</p>
-            </div>
-            <div style="text-align: right;">
-              <div style="display: flex; align-items: center; gap: 4px;">
-                <md-outlined-button>-</md-outlined-button>
-                <span>1</span>
-                <md-outlined-button>+</md-outlined-button>
-              </div>
-              <md-filled-button style="margin-top: 8px;">
-                <span class="material-icons">add_shopping_cart</span> Agregar
-              </md-filled-button>
-              <h4 style="color: gold; margin-top: 4px;">$11.800</h4>
-            </div>
-         </div>
-
-          <!-- Agregá más productos igual que este -->
+            <md-filled-button style="margin-top: 8px;">
+              <span class="material-icons">add_shopping_cart</span> Agregar
+            </md-filled-button>
+            <h4 style="color: gold; margin-top: 4px;">$10.000</h4>
+          </div>
         </div>
-      </md-elevated-card>
+        <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
+          <div style="flex: 1;">
+            <h3>GOLD CLASSIC SIMPLE</h3>
+            <p style="color: #ccc;">Pan de papa, medallón de carne smasheado, cheddar, bacon, lechuga, tomate, cebolla
+              en brunoise, ketchup, mostaza y nuestra salsa gold.</p>
+          </div>
+          <div style="text-align: right;">
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <md-outlined-button>-</md-outlined-button>
+              <span>1</span>
+              <md-outlined-button>+</md-outlined-button>
+            </div>
+            <md-filled-button style="margin-top: 8px;">
+              <span class="material-icons">add_shopping_cart</span> Agregar
+            </md-filled-button>
+            <h4 style="color: gold; margin-top: 4px;">$10.500</h4>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
+          <div style="flex: 1;">
+            <h3>GOLD BURGUER SIMPLE</h3>
+            <p style="color: #ccc;">Pan de papa, medallón de carne smasheado, cheddar, bacon, lechuga, tomate, cebolla
+              en brunoise, pepinillos y nuestra salsa gold.</p>
+          </div>
+          <div style="text-align: right;">
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <md-outlined-button>-</md-outlined-button>
+              <span>1</span>
+              <md-outlined-button>+</md-outlined-button>
+            </div>
+            <md-filled-button style="margin-top: 8px;">
+              <span class="material-icons">add_shopping_cart</span> Agregar
+            </md-filled-button>
+            <h4 style="color: gold; margin-top: 4px;">$10.300</h4>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
+          <div style="flex: 1;">
+            <h3>GOLD VEGGIE SIMPLE</h3>
+            <p style="color: #ccc;">Pan de papa, medallón VEGGIE, cheddar, lechuga, tomate, cebolla en brunoise y
+              nuestra salsa gold.</p>
+          </div>
+          <div style="text-align: right;">
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <md-outlined-button>-</md-outlined-button>
+              <span>1</span>
+              <md-outlined-button>+</md-outlined-button>
+            </div>
+            <md-filled-button style="margin-top: 8px;">
+              <span class="material-icons">add_shopping_cart</span> Agregar
+            </md-filled-button>
+            <h4 style="color: gold; margin-top: 4px;">$10.000</h4>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
+          <div style="flex: 1;">
+            <h3>DOBLE BIG GOLD</h3>
+            <p style="color: #ccc;">Pan de papa, doble medallón de carne smasheado, doble cheddar, lechuga, cebolla en
+              brunoise, pepinillos y nuestra salsa gold.</p>
+          </div>
+          <div style="text-align: right;">
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <md-outlined-button>-</md-outlined-button>
+              <span>1</span>
+              <md-outlined-button>+</md-outlined-button>
+            </div>
+            <md-filled-button style="margin-top: 8px;">
+              <span class="material-icons">add_shopping_cart</span> Agregar
+            </md-filled-button>
+            <h4 style="color: gold; margin-top: 4px;">$11.500</h4>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
+          <div style="flex: 1;">
+            <h3>GOLD CLASSIC DOBLE</h3>
+            <p style="color: #ccc;">Pan de papa, doble medallón de carne smasheado, doble cheddar, bacon, cebolla en
+              brunoise, ketchup, mostaza y nuestra salsa gold.</p>
+          </div>
+          <div style="text-align: right;">
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <md-outlined-button>-</md-outlined-button>
+              <span>1</span>
+              <md-outlined-button>+</md-outlined-button>
+            </div>
+            <md-filled-button style="margin-top: 8px;">
+              <span class="material-icons">add_shopping_cart</span> Agregar
+            </md-filled-button>
+            <h4 style="color: gold; margin-top: 4px;">$12.000</h4>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 1rem; gap: 1rem;">
+          <div style="flex: 1;">
+            <h3>GOLD BURGUER DOBLE</h3>
+            <p style="color: #ccc;">Pan de papa, doble medallón de carne smasheado, doble cheddar, bacon, lejchuga,
+              tomate, cebolla en brunoise, pepinillos y nuestra salsa gold.</p>
+          </div>
+          <div style="text-align: right;">
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <md-outlined-button>-</md-outlined-button>
+              <span>1</span>
+              <md-outlined-button>+</md-outlined-button>
+            </div>
+            <md-filled-button style="margin-top: 8px;">
+              <span class="material-icons">add_shopping_cart</span> Agregar
+            </md-filled-button>
+            <h4 style="color: gold; margin-top: 4px;">$11.800</h4>
+          </div>
+        </div>
 
-      <!-- Carruseles (solo imagenes simples con controles personalizados si querés) -->
-      <div style="width: 400px;">
-        <img src="../IMG/Gold_Burguer_Simple.jpeg" alt="Gold Burguer Simple" class="fixed-height-carousel" style="width: 100%;">
-        <img src="../IMG/Gold_Burguer_Veggie.jpeg" alt="Gold Burguer Veggie" class="fixed-height-carousel" style="width: 100%; margin-top: 1rem;">
+        <!-- Agregá más productos igual que este -->
       </div>
-    </section>
+    </md-elevated-card>
+
+    <!-- Carruseles (solo imagenes simples con controles personalizados si querés) -->
+    <div style="width: 400px;">
+      <img src="../IMG/Gold_Burguer_Simple.jpeg" alt="Gold Burguer Simple" class="fixed-height-carousel"
+        style="width: 100%;">
+      <img src="../IMG/Gold_Burguer_Veggie.jpeg" alt="Gold Burguer Veggie" class="fixed-height-carousel"
+        style="width: 100%; margin-top: 1rem;">
+    </div>
+  </section>
   </main>
 
   <!-- Footer -->
@@ -269,4 +264,5 @@
   </footer>
 
 </body>
+
 </html>

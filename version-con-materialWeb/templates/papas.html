@@ -4,10 +4,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hamburguesas - GOLD BURGUER</title>
+    <title>Papas Fritas - GOLD BURGUER</title>
 
     <!-- Material Web CDN -->
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@material/web/all.js"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
@@ -18,66 +29,56 @@
 
 <body>
     <!-- Navbar -->
+
     <nav style="
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.5rem 1rem;
-        background-color: #ffc107;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      ">
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      background-color: #ffc107;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    ">
+
         <!-- Logo y nombre -->
-        <article style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0.5rem 1rem;
-          background-color: var(--md-sys-color-primary);
-          position: sticky;
-        ">
-            <img src="../IMG/logo-gold.png" alt="logo gold" class="gold-logo" />
-            <span style="font-weight: bold; font-size: 1.5rem; color: #212529">GOLD BURGUER</span>
-        </article>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <img src="../IMG/logo-gold.png" alt="logo gold" style="height: 48px;">
+            <span style="font-weight: bold; font-size: 1.5rem; color: #212529;">GOLD BURGUER</span>
+        </div>
 
         <!-- Enlaces -->
-        <article style="display: flex; align-items: center; gap: 1rem">
-            <a href="#" style="text-decoration: none; color: #212529">Arma tu burguer</a>
-            <a href="sobreNosotros.html" style="text-decoration: none; color: #212529">Sobre Nosotros</a>
+        <div style="display: flex; align-items: center; gap: 2rem;">
+            <a href="#" style="text-decoration: none; color: #212529;">Arma tu burguer</a>
+            <a href="sobreNosotros.html" style="text-decoration: none; color: #212529;">Sobre Nosotros</a>
 
-            <section>
-                <md-filled-button id="productos-anchor">Productos</md-filled-button>
-                <md-menu positioning="fixed" id="productos-menu" anchor="productos-anchor">
-                    <md-menu-item>
-                        <article slot="headline">Hamburguesas</article>
-                    </md-menu-item>
+            <div style="margin: 16px;">
+                <md-filled-button id="usage-fixed-anchor">Productos</md-filled-button>
+            </div>
 
-                    <md-menu-item>
-                        <article slot="headline">Papas</article>
-                    </md-menu-item>
-
-                    <md-menu-item>
-                        <article slot="headline">Bebidas</article>
-                    </md-menu-item>
-                </md-menu>
-
-            </section>
+            <md-menu positioning="fixed" id="usage-fixed" anchor="usage-fixed-anchor">
+                <md-menu-item>
+                    <div slot="headline"><a href="hamburguesas.html" style="text-decoration: none;">Hamburguesas</a>
+                    </div>
+                </md-menu-item>
+                <md-menu-item>
+                    <div slot="headline"><a href="bebidas.html" style="text-decoration: none;">Bebidas</a></div>
+                </md-menu-item>
+                <md-menu-item>
+                    <div slot="headline"><a href="papas.html" style="text-decoration: none;">Papas</a></div>
+                </md-menu-item>
+            </md-menu>
 
             <!-- Botones a la derecha -->
-            <div style="display: flex; gap: 0.5rem">
-                <a href="ubicacion.html">
-                    <md-filled-tonal-icon-button>
-                        <span class="material-icons">location_on</span>
-                    </md-filled-tonal-icon-button>
-                </a>
-                <a href="carrito.html">
-                    <md-filled-tonal-icon-button>
-                        <span class="material-icons">shopping_cart</span>
-                    </md-filled-tonal-icon-button>
-                </a>
+            <div style="display: flex; gap: 0.5rem;">
+                <md-filled-tonal-icon-button>
+                    <a href="ubicacion.html"><span class="material-icons">location_on</span></a>
+                </md-filled-tonal-icon-button>
+                <md-filled-tonal-icon-button>
+                    <a href="carrito.html"><span class="material-icons">shopping_cart</span></a>
+                </md-filled-tonal-icon-button>
             </div>
-        </article>
+        </div>
     </nav>
 
     <!-- icnos header -->
@@ -146,6 +147,7 @@
                             <span class="material-icons">add_shopping_cart</span> Agregar
                         </md-filled-button>
                         <h4 style="color: gold; margin-top: 4px">$4.000</h4>
+
                     </div>
                 </div>
             </div>
