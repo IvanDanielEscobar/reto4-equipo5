@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import '@material/web/all.js';
 import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 export default function SobreNosotros() {
   useEffect(() => {
@@ -40,7 +38,7 @@ export default function SobreNosotros() {
           <p>
             📍 Estamos en Pasaje Río Pilcomayo 650, Río Cuarto, Córdoba, Argentina. Hacemos envíos a todo el país.
           </p>
-          <md-filled-button id="ver-mapa-button">Ver en el Mapa</md-filled-button>
+          <md-filled-button id="ver-mapa-button" label="Ver en el Mapa"></md-filled-button>
 
           <div style={{ marginTop: '16px' }}>
             <iframe

@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import '@material/web/all.js';
 
 export default function Navbar() {
@@ -9,6 +10,15 @@ export default function Navbar() {
         menuEl.open = !menuEl.open;
       });
     }
+    const openMenu = () => {
+      menuEl.open = !menuEl.open;
+    };
+    anchorEl.addEventListener('click', openMenu);
+
+    // Limpieza del listener de eventos al desmontar el componente
+    return () => {
+      anchorEl.removeEventListener('click', openMenu);
+    };
   }, []);
 
   return (
@@ -33,7 +43,7 @@ export default function Navbar() {
       {/* Links y Menú */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
         <a href="/" style={{ textDecoration: 'none', color: '#212529' }}>Arma tu burguer</a>
-        <a href="/SobreNosotros" style={{ textDecoration: 'none', color: '#212529' }}>Sobre Nosotros</a>
+        <a href="/sobre_nosotros" style={{ textDecoration: 'none', color: '#212529' }}>Sobre Nosotros</a>
 
         <div style={{ margin: '16px' }}>
           <md-filled-button id="menu-productos-anchor">Productos</md-filled-button>
@@ -41,13 +51,13 @@ export default function Navbar() {
 
         <md-menu positioning="fixed" id="menu-productos" anchor="menu-productos-anchor">
           <md-menu-item>
-            <div slot="headline"><a href="/Hamburguesas" style={{ textDecoration: 'none' }}>Hamburguesas</a></div>
+            <div slot="headline"><a href="/hamburguesas" style={{ textDecoration: 'none' }}>Hamburguesas</a></div>
           </md-menu-item>
           <md-menu-item>
-            <div slot="headline"><a href="/Bebidas" style={{ textDecoration: 'none' }}>Bebidas</a></div>
+            <div slot="headline"><a href="/bebidas" style={{ textDecoration: 'none' }}>Bebidas</a></div>
           </md-menu-item>
           <md-menu-item>
-            <div slot="headline"><a href="/Papas" style={{ textDecoration: 'none' }}>Papas</a></div>
+            <div slot="headline"><a href="/papas" style={{ textDecoration: 'none' }}>Papas</a></div>
           </md-menu-item>
         </md-menu>
 
@@ -59,6 +69,10 @@ export default function Navbar() {
           <md-filled-tonal-icon-button>
             <a href="/carrito"><span className="material-icons">shopping_cart</span></a>
           </md-filled-tonal-icon-button>
+          <div style={{ display: 'flex', gap: '0.5rem' }}>
+          {/* Iconos de Material Web para ubicación y carrito */}
+        
+        </div>
         </div>
       </div>
     </nav>
