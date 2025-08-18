@@ -1,0 +1,74 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: var(--md-sys-color-primary); 
+  position: sticky; /* para que la barra se mantenga arriba */
+  top: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* sombra  */
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logoImagen {
+  height: 58px;
+}
+
+.appName {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--md-sys-color-on-primary-container); 
+}
+
+.navLinksyMenu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--md-sys-color-on-primary-container); 
+  transition: color 0.3s ease; /* para el hover */
+}
+
+.navLink:hover {
+  color: var(--md-sys-color-surface);
+}
+
+.menuButtonWrapper {
+  margin: 16px;  
+}
+
+.productsButton {
+  --md-filled-button-container-color: var(--md-sys-color-primary); /* Hace el fondo del botón DORADO */
+  --md-filled-button-label-text-color: var(--md-sys-color-on-primary); /* Texto oscuro sobre el dorado */
+}
+
+/* menu desplegable */
+.menuItemLink {
+  text-decoration: none;
+  color: var(--md-sys-color-on-primary); 
+}
+
+.rightButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.iconButton {
+  --md-filled-icon-button-container-color: var(--md-sys-color-surface); 
+  --md-filled-icon-button-icon-color: var(--md-sys-color-primary-container); /* Color del icono */
+}
+
+.iconButton img {
+  height: 24px; 
+  width: 24px;
+  display: block;
+  margin: auto; 
+}

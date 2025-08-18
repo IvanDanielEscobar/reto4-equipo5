@@ -9,8 +9,12 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 // Páginas
+import Home from './pages/Home';
 import SobreNosotros from './pages/SobreNosotros';
 import Bebidas from './pages/Bebidas';
+import Hamburguesas from './pages/Hamburguesas';
+import Papas from './pages/Papas';
+import './styles/global.css';
 
 
 
@@ -23,13 +27,11 @@ export default function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={
-              <div >
-                <h1>¡Bienvenido a Gold Burguer!</h1>
-                </div>
-            } />
+        <Route path="/" element={<Home />} />
         <Route path="/sobre_nosotros" element={<SobreNosotros />} />
-        <Route path="/bebidas" element={<Bebidas />} />   
+        <Route path="/bebidas" element={<Bebidas />} />  
+        <Route path='/papas' element= {<Papas />} /> 
+        <Route path='/hamburguesas' element= {<Hamburguesas />} /> 
       </Routes>
       <Footer />
     </Router>

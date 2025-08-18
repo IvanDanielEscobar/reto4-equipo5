@@ -1,0 +1,25 @@
+.footer {
+  background-color: black; 
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px; 
+  color: var(--md-sys-color-on-background); 
+  width: 100%; /* para ocupar todo el ancho */
+  box-sizing: border-box; 
+}
+
+.socialLink {
+  margin: 0 10px; /* margen entre los iconos */
+  display: inline-block; /* items alineados */
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  display: block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.socialIcon:hover {
+  transform: scale(1.1); /* efecto de zoom */
+}

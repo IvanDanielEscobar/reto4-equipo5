@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  flex-grow: 1; /* Esto es importante para que el contenido principal ocupe espacio y el footer se mantenga abajo */
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--md-sys-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--md-sys-color-on-background); 
+}

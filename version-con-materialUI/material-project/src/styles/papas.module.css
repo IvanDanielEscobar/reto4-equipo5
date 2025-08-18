@@ -1,0 +1,113 @@
+.container {
+    padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+/* encabezado */
+.header {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin: 2em 0;
+}
+
+.headerLink {
+  text-decoration: none;
+  text-align: center;
+}
+
+.headerIcon {
+  width: 120px;
+}
+
+.headerText {
+  font-weight: bold;
+  color: var(--md-sys-color-on-background);
+}
+
+/* titulo */
+.title {
+  text-align: center;
+  color: var(--md-sys-color-primary);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* main productos */
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* productos card */
+.productCard {
+  max-width: 600px;
+  width: 100%;
+  background-color: var(--md-sys-color-surface);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cardContent {
+  padding: 16px;
+}
+
+.cardTitle {
+  color: var(--md-sys-color-primary);
+  text-align: center;
+}
+
+/* Estilos para cada producto individual */
+.productItem {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 1rem;
+  border-bottom: 1px solid var(--md-sys-color-on-surface);
+  padding-bottom: 1rem;
+}
+
+.productItem:last-child {
+  border-bottom: none;
+}
+
+.productInfo {
+  flex: 1;
+}
+
+.productName {
+  color: var(--md-sys-color-on-background);
+}
+
+.productDescription {
+  color: var(--md-sys-color-on-surface);
+}
+
+.acciones {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cantidad {
+  color: var(--md-sys-color-on-background);
+}
+
+.addButton {
+  margin-top: 8px;
+}
+
+.precio {
+  color: var(--md-sys-color-primary);
+  margin: 4px 0;
+}

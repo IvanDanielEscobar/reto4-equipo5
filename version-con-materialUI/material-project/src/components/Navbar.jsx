@@ -1,78 +1,93 @@
 import React, { useEffect } from 'react';
 import '@material/web/all.js';
+import { useNavigate } from 'react-router-dom';
+import styles from '../styles/navbar.module.css';
+import '../styles/global.css';
+import { styles as typescaleStyles} from '@material/web/typography/md-typescale-styles';
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
+  // useEffect abre y cierra el menu al hacer click
   useEffect(() => {
+
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+
     const anchorEl = document.querySelector('#menu-productos-anchor');
     const menuEl = document.querySelector('#menu-productos');
+    
     if (anchorEl && menuEl) {
-      anchorEl.addEventListener('click', () => {
+      // abrir y cierrar el menu
+      const openMenu = () => {
         menuEl.open = !menuEl.open;
+      };
+      anchorEl.addEventListener('click', openMenu);
+
+      // todos los productos
+      const menuItems = menuEl.querySelectorAll('md-menu-item');
+      menuItems.forEach(item => {
+        const itemClickHandler = (event) => {
+          // Obtiene la URL del item
+          const link = item.querySelector('a');
+          if (link) {
+            // Usa useNavigate para ir a la ruta
+            navigate(link.getAttribute('href'));
+            menuEl.open = false; // cierra el menu
+          }
+        };
+        // agrega el evento clic a los items
+        item.addEventListener('click', itemClickHandler);
       });
+
+      // limpia el listener
+      return () => {
+        anchorEl.removeEventListener('click', openMenu);
+        menuItems.forEach(item => {
+          item.removeEventListener('click', () => {});
+        });
+      };
     }
-    const openMenu = () => {
-      menuEl.open = !menuEl.open;
-    };
-    anchorEl.addEventListener('click', openMenu);
-
-    // Limpieza del listener de eventos al desmontar el componente
-    return () => {
-      anchorEl.removeEventListener('click', openMenu);
-    };
-  }, []);
-
+  }, [navigate]);//
+  
   return (
-    <nav style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: '0.5rem 1rem',
-      backgroundColor: '#ffc107',
-      position: 'sticky',
-      top: 0,
-      zIndex: 1000
-    }}>
+    <nav className={styles.navbar}>
       {/* Logo y Nombre */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <img src="/IMG/logo-gold.png" alt="logo gold" style={{ height: '48px' }} />
-        <span style={{ fontWeight: 'bold', fontSize: '1.5rem', color: '#212529' }}>
+      <div className={styles.logoContainer}>
+        <img src="/IMG/logo-gold.png" alt="logo gold" className={styles.logoImagen} />
+        <span className={styles.appName} >
           GOLD BURGUER
         </span>
       </div>
 
       {/* Links y Menú */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-        <a href="/" style={{ textDecoration: 'none', color: '#212529' }}>Arma tu burguer</a>
-        <a href="/sobre_nosotros" style={{ textDecoration: 'none', color: '#212529' }}>Sobre Nosotros</a>
+      <div className={styles.navLinksyMenu}>
+        <a href="/" className={styles.navLink}>Arma tu burguer</a>
+        <a href="/sobre_nosotros" className={styles.navLink}>Sobre Nosotros</a>
 
-        <div style={{ margin: '16px' }}>
+        <div className={styles.menuButtonWrapper}>
           <md-filled-button id="menu-productos-anchor">Productos</md-filled-button>
         </div>
 
         <md-menu positioning="fixed" id="menu-productos" anchor="menu-productos-anchor">
           <md-menu-item>
-            <div slot="headline"><a href="/hamburguesas" style={{ textDecoration: 'none' }}>Hamburguesas</a></div>
+            <div slot="headline"><a href="/hamburguesas" className={styles.navItemLink}>Hamburguesas</a></div>
           </md-menu-item>
           <md-menu-item>
-            <div slot="headline"><a href="/bebidas" style={{ textDecoration: 'none' }}>Bebidas</a></div>
+            <div slot="headline"><a href="/bebidas" className={styles.navItemLink}>Bebidas</a></div>
           </md-menu-item>
           <md-menu-item>
-            <div slot="headline"><a href="/papas" style={{ textDecoration: 'none' }}>Papas</a></div>
+            <div slot="headline"><a href="/papas" className={styles.navItemLink}>Papas</a></div>
           </md-menu-item>
         </md-menu>
 
         {/* Botones a la derecha */}
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
-          <md-filled-tonal-icon-button>
-            <a href="/ubicacion"><span className="material-icons">location_on</span></a>
-          </md-filled-tonal-icon-button>
-          <md-filled-tonal-icon-button>
-            <a href="/carrito"><span className="material-icons">shopping_cart</span></a>
-          </md-filled-tonal-icon-button>
-          <div style={{ display: 'flex', gap: '0.5rem' }}>
-          {/* Iconos de Material Web para ubicación y carrito */}
-        
-        </div>
+        <div className={styles.rightButtons}>
+          <md-filled-icon-button className={styles.iconButton}>
+            <a href="/sobre_nosotros"><img src="/public/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Ubicación"></img></a>
+          </md-filled-icon-button>
+          <md-filled-icon-button className={styles.iconButton}>
+            <a href="/carrito"><img src="/public/shopping_cart_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Carrito de compras"></img></a>
+          </md-filled-icon-button>
         </div>
       </div>
     </nav>

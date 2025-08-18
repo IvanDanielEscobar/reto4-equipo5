@@ -1,0 +1,50 @@
+:root {
+    /* primarios */
+  --md-sys-color-primary: #FFD700; /* gold */
+  --md-sys-color-on-primary: #212529; /* color de texto  */
+  --md-sys-color-primary-container: #FFEB80;
+  --md-sys-color-on-primary-container: #1A1A00;
+
+  /* fondos, tarjetas, componentes */
+  --md-sys-color-background: #121212; /* casi negro */
+  --md-sys-color-on-background: #E0E0E0; /* texto claro  */ 
+  --md-sys-color-surface: #424242; /* gris */
+  --md-sys-color-on-surface: #A0A0A0; /* gris claro */
+
+  
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; 
+  background-color: var(--md-sys-color-background); 
+  color: var(--md-sys-color-on-background); 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* basico */
+
+  display: flex; /* body flex */
+  flex-direction: column; /* lementos en vertical */
+  min-height: 100vh; /*  body  100% del alto visible */
+}
+
+a {
+    color: var(--md-sys-color-on-primary);
+  text-decoration: none; /* afuera subrayado */
+}
+
+/* imagenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; 
+}
+
+.contenido-main {
+  flex-grow: 1;
+}
