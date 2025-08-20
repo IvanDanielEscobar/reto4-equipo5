@@ -32,7 +32,7 @@ export default function Bebidas() {
         </a>
       </header>
 
-      <h1 className={styles.sectionTitle}>Nuestras Bebidas</h1>
+      <h1 className={styles.title}>Nuestras Bebidas</h1>
 
       {/* cervezas */}
       <section className={`${styles.accordionItem} ${activeIndex === 0 ? styles.active : ''}`}>

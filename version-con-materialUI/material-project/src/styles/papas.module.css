@@ -27,13 +27,12 @@
 }
 
 /* titulo */
-.sectionTitle {
-  font-size: 2rem;
-  font-weight: 600;
-    padding: 50px;
-  margin: 0;
+.title {
   text-align: center;
   color: var(--md-sys-color-primary);
+  font-size: 46px;
+  font-weight: bold;
+  margin-bottom: 0;
 }
 
 /* main productos */
