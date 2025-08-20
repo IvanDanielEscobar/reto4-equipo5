@@ -37,8 +37,8 @@ export default function Bebidas() {
       {/* cervezas */}
       <section className={`${styles.accordionItem} ${activeIndex === 0 ? styles.active : ''}`}>
         <div className={styles.accordionHeader} onClick={() => toggleAccordion(0)}>
-          <h2>Cervezas</h2>
-          <span className="material-icons">
+          <h2 className={styles.sectionTitle}>Cervezas</h2>
+          <span className={styles.materialIcons}>
             {activeIndex === 0 ? 'Ʌ' : 'V'}
           </span>
         </div>
@@ -87,8 +87,8 @@ export default function Bebidas() {
       {/* gaseosas */}
       <section className={`${styles.accordionItem} ${activeIndex === 1 ? styles.active : ''}`}>
         <div className={styles.accordionHeader} onClick={() => toggleAccordion(1)}>
-          <h2>Gaseosas</h2>
-          <span className="material-icons">
+          <h2 className={styles.sectionTitle}>Gaseosas</h2>
+          <span className={styles.materialIcons}>
             {activeIndex === 1 ? 'Ʌ' : 'V'}
           </span>
         </div>
@@ -155,8 +155,8 @@ export default function Bebidas() {
       {/* Acordeón Aguas */}
       <section className={`${styles.accordionItem} ${activeIndex === 2 ? styles.active : ''}`}>
         <div className={styles.accordionHeader} onClick={() => toggleAccordion(2)}>
-          <h2>Aguas</h2>
-          <span className="material-icons">
+          <h2 className={styles.sectionTitle}>Aguas</h2>
+          <span className={styles.materialIcons}>
             {activeIndex === 2 ? 'Ʌ' : 'V'}
           </span>
         </div>

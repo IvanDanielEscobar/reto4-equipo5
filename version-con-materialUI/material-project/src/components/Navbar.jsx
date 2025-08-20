@@ -54,7 +54,7 @@ export default function Navbar() {
       <div className={styles.logoContainer}>
         <img src="/IMG/logo-gold.png" alt="logo gold" className={styles.logoImagen} />
         <span className={styles.appName} >
-          GOLD BURGUER
+          <div slot="headline"><a href="/">GOLD BURGUER</a></div>
         </span>
       </div>
       {/* menu mobile */}

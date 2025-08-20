@@ -9,6 +9,11 @@ function Home() {
         <p className={styles.subtitle}>
           Sabores inigualables, calidad suprema. Descubre el verdadero sabor de la hamburguesa artesanal.
         </p>
+        <div className={styles.button}>
+        <md-filled-button>
+      Nuestros Productos
+    </md-filled-button>
+    </div>
       </header>
     </div>
   );
