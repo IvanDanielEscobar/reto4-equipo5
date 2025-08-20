@@ -38,7 +38,11 @@ export default function SobreNosotros() {
           <p>
             📍 Estamos en Pasaje Río Pilcomayo 650, Río Cuarto, Córdoba, Argentina. Hacemos envíos a todo el país.
           </p>
-          <md-filled-button id="ver-mapa-button" label="Ver en el Mapa"></md-filled-button>
+          <md-filled-button id="ver-mapa-button" onClick={() => window.open(
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6834.661987727404!2d-64.3657198!3d-33.1269784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cd9886a947bd01%3A0x7c5aa839aa9f03b!2sPje.%20R%C3%ADo%20Pilcomayo%20650%2C%20R%C3%ADo%20Cuarto%2C%20C%C3%B3rdoba%2C%20Argentina!5e0!3m2!1ses-419!2sar!4v1721064000000",
+    "_blank")}>
+      Ver en el Mapa
+    </md-filled-button>
 
           <div style={{ marginTop: '16px' }}>
             <iframe
