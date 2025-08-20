@@ -41,44 +41,39 @@
       z-index: 1000;
     ">
 
-    <!-- Logo y nombre -->
-    <div style="display: flex; align-items: center; gap: 1rem;">
-      <img src="../IMG/logo-gold.png" alt="logo gold" style="height: 48px;">
-      <span style="font-weight: bold; font-size: 1.5rem; color: #212529;">GOLD BURGUER</span>
+      <!-- Navbar -->
+  <md-top-app-bar style="--md-sys-color-primary:#ffc107;">
+    <div slot="title" style="display:flex; align-items:center; gap:1rem;">
+      <img src="../IMG/logo-gold.png" alt="logo gold" style="height:40px;">
+      <span style="font-weight:bold; color:#212529;">GOLD BURGUER</span>
     </div>
 
-    <!-- Enlaces -->
-    <div style="display: flex; align-items: center; gap: 2rem;">
-      <a href="#" style="text-decoration: none; color: #212529;">Arma tu burguer</a>
-      <a href="sobreNosotros.html" style="text-decoration: none; color: #212529;">Sobre Nosotros</a>
+    <div slot="actions">
+      <md-text-button href="#">Arma tu burguer</md-text-button>
+      <md-text-button href="sobreNosotros.html">Sobre Nosotros</md-text-button>
 
-      <div style="margin: 16px;">
-        <md-filled-button id="usage-fixed-anchor">Productos</md-filled-button>
-      </div>
-
-      <md-menu positioning="fixed" id="usage-fixed" anchor="usage-fixed-anchor">
-        <md-menu-item>
-          <div slot="headline"><a href="hamburguesas.html" style="text-decoration: none;">Hamburguesas</a></div>
-        </md-menu-item>
-        <md-menu-item>
-          <div slot="headline"><a href="bebidas.html" style="text-decoration: none;">Bebidas</a></div>
-        </md-menu-item>
-        <md-menu-item>
-          <div slot="headline"><a href="papas.html" style="text-decoration: none;">Papas</a></div>
-        </md-menu-item>
+      <!-- Menú Productos -->
+      <md-text-button id="menu-anchor">Productos</md-text-button>
+      <md-menu anchor="menu-anchor">
+        <md-menu-item href="hamburguesas.html"><div slot="headline">Hamburguesas</div></md-menu-item>
+        <md-menu-item href="bebidas.html"><div slot="headline">Bebidas</div></md-menu-item>
+        <md-menu-item href="papas.html"><div slot="headline">Papas</div></md-menu-item>
       </md-menu>
 
-      <!-- Botones a la derecha -->
-      <div style="display: flex; gap: 0.5rem;">
-        <md-filled-tonal-icon-button>
-          <a href="ubicacion.html"><span class="material-icons">location_on</span></a>
-        </md-filled-tonal-icon-button>
-        <md-filled-tonal-icon-button>
-          <a href="carrito.html"><span class="material-icons">shopping_cart</span></a>
-        </md-filled-tonal-icon-button>
-      </div>
+      <md-icon-button href="ubicacion.html">
+        <span class="material-icons">location_on</span>
+      </md-icon-button>
+      <md-icon-button href="carrito.html">
+        <span class="material-icons">shopping_cart</span>
+      </md-icon-button>
     </div>
-  </nav>
+  </md-top-app-bar>
+
+  <script type="module">
+    const anchor = document.querySelector('#menu-anchor');
+    const menu = document.querySelector('md-menu');
+    anchor.addEventListener('click', () => menu.open = !menu.open);
+  </script>
 
   <!--Barra de iconos-->
   <header style="display: flex; justify-content: center; gap: 2em; margin: 2em 0">
