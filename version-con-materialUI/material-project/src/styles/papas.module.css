@@ -116,3 +116,45 @@
   color: var(--md-sys-color-primary);
   margin: 4px 0;
 }
+
+
+/* Celulares (<= 768px) */
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap; /* se apilan iconos */
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  .headerIcon {
+    width: 60px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .productItem {
+    flex-direction: column; /* apilar info y acciones */
+    align-items: flex-start;
+  }
+
+  .productName {
+    margin-left: 0;
+  }
+
+  .actions {
+    width: 100%;
+    flex-direction: column; /* botones en fila */
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .control {
+    gap: 15px;
+  }
+
+  .precio {
+    font-size: 1rem;
+  }
+}

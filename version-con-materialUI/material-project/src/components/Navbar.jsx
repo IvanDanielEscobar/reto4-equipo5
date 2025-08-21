@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '@material/web/all.js';
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/navbar.module.css';
@@ -7,6 +7,7 @@ import { styles as typescaleStyles} from '@material/web/typography/md-typescale-
 
 export default function Navbar() {
   const navigate = useNavigate();
+const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // useEffect abre y cierra el menu al hacer click
   useEffect(() => {
@@ -58,12 +59,15 @@ export default function Navbar() {
         </span>
       </div>
       {/* menu mobile */}
-      <div>
-      <md-filled-icon-button onCLick={ () => setIsMobileMenuOpen(true)} className={styles.menuToggle}></md-filled-icon-button>
-      </div>
-
+       {/* Botón hamburguesa */}
+      <md-filled-icon-button 
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+        class={styles.menuToggle}
+      >
+        <md-icon>menu</md-icon>
+      </md-filled-icon-button>
       {/* menu escritorio */}
-      <div className={styles.navLinksyMenu}>
+      <div className={`${styles.navLinksyMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
         <a href="/" className={styles.navLink}>Arma tu burguer</a>
         <a href="/sobre_nosotros" className={styles.navLink}>Sobre Nosotros</a>
 

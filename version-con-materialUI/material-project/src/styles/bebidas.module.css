@@ -1,6 +1,6 @@
 .container {
     padding-top: 20px;
-    padding-bottom: 15px;
+    padding-bottom: 45px;
 }
 
 /* encabezado */
@@ -38,7 +38,9 @@
 .accordionItem {
   background: var(--md-sys-color-surface);
   border-radius: 12px;
-  margin: 20px 420px;
+  margin: 20px auto;
+  max-width: 800px;
+  width: 100%;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   overflow: hidden;
   transition: all 0.3s ease;
@@ -141,6 +143,32 @@
   margin-right: 25px;
 }
 
-@media only screen and (min-width: 601px) {
+/* Móviles chicos */
+@media (max-width: 480px) {
+  .headerIcon {
+    width: 60px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+
+  .accordionHeader {
   
+    padding: 12px;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+
+  .productItem img {
+    max-width: 150px;
+  }
+
+  .addButton {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
 }

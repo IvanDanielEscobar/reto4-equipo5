@@ -75,3 +75,38 @@
 }
 
 
+/* Botón hamburguesa */
+.menuToggle {
+  display: none;           /* oculto en escritorio */
+  align-self: center;      
+  height: 40px;             
+  width: 40px;
+  padding: 0;              /* evita padding extra */
+}
+
+
+/* mobile */
+@media (max-width: 768px) {
+  .navLinksyMenu {
+    display: none; /* oculto por defecto */
+    flex-direction: column;
+    width: 100%;
+    background: var(--md-sys-color-primary);
+    position: absolute;
+    top: 64px; /* debajo del navbar */
+    left: 0;
+    padding: 1rem;
+  }
+
+  .navLinksyMenu.open {
+    display: flex; /* se muestra al abrir */
+  }
+
+  .menuToggle {
+    display: block; /* aparece en mobile */
+  }
+
+  .rightButtons {
+    justify-content: flex-start;
+  }
+}
