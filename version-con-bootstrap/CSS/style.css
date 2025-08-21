@@ -165,6 +165,7 @@ body {
 .fixed-height-carousel img {
     object-fit: cover;
     width: 100%;
+    flex-direction: column;
 }
 
 .footer-icon {

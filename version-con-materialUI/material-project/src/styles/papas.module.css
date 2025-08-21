@@ -1,14 +1,15 @@
 .container {
     padding-top: 20px;
-  padding-bottom: 15px;
+    padding-bottom: 15px;
 }
 
 /* encabezado */
 .header {
+    padding: 50px 0;
   display: flex;
   justify-content: center;
-  gap: 2em;
-  margin: 2em 0;
+  gap: 30px;
+  margin: 0;
 }
 
 .headerLink {
@@ -17,7 +18,7 @@
 }
 
 .headerIcon {
-  width: 120px;
+  width: 100px;
 }
 
 .headerText {
@@ -29,8 +30,9 @@
 .title {
   text-align: center;
   color: var(--md-sys-color-primary);
-  font-size: 2.5rem;
+  font-size: 46px;
   font-weight: bold;
+  margin-bottom: 0;
 }
 
 /* main productos */
@@ -38,20 +40,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  padding: 2rem;
+  gap: 20px;
+  padding: 20px;
 }
 
 /* productos card */
 .productCard {
-  max-width: 600px;
+  max-width: 1000px;
   width: 100%;
   background-color: var(--md-sys-color-surface);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cardContent {
-  padding: 16px;
+  padding: 26px;
 }
 
 .cardTitle {
@@ -61,9 +63,10 @@
 
 /* Estilos para cada producto individual */
 .productItem {
+  margin: 10px;
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 10px;
   gap: 1rem;
   border-bottom: 1px solid var(--md-sys-color-on-surface);
   padding-bottom: 1rem;
@@ -78,25 +81,27 @@
 }
 
 .productName {
+  margin-left: 20px;
   color: var(--md-sys-color-on-background);
 }
 
 .productDescription {
+  max-width: 700px;
   color: var(--md-sys-color-on-surface);
 }
 
-.acciones {
+.actions {
   text-align: right;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .control {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 40px;
 }
 
 .cantidad {

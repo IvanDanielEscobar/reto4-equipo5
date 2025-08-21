@@ -10,9 +10,7 @@ export default function Navbar() {
 
   // useEffect abre y cierra el menu al hacer click
   useEffect(() => {
-
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-
     const anchorEl = document.querySelector('#menu-productos-anchor');
     const menuEl = document.querySelector('#menu-productos');
     
@@ -50,16 +48,21 @@ export default function Navbar() {
   }, [navigate]);//
   
   return (
+    <div>
     <nav className={styles.navbar}>
       {/* Logo y Nombre */}
       <div className={styles.logoContainer}>
         <img src="/IMG/logo-gold.png" alt="logo gold" className={styles.logoImagen} />
         <span className={styles.appName} >
-          GOLD BURGUER
+          <div slot="headline"><a href="/">GOLD BURGUER</a></div>
         </span>
       </div>
+      {/* menu mobile */}
+      <div>
+      <md-filled-icon-button onCLick={ () => setIsMobileMenuOpen(true)} className={styles.menuToggle}></md-filled-icon-button>
+      </div>
 
-      {/* Links y Menú */}
+      {/* menu escritorio */}
       <div className={styles.navLinksyMenu}>
         <a href="/" className={styles.navLink}>Arma tu burguer</a>
         <a href="/sobre_nosotros" className={styles.navLink}>Sobre Nosotros</a>
@@ -91,5 +94,6 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+    </div>
   );
 }

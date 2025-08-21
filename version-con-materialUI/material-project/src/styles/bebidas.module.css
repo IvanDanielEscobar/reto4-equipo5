@@ -1,0 +1,146 @@
+.container {
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+/* encabezado */
+.header {
+    padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+}
+
+.headerLink {
+  text-decoration: none;
+  text-align: center;
+}
+
+.headerIcon {
+  width: 100px;
+}
+
+.headerText {
+  font-weight: bold;
+  color: var(--md-sys-color-on-background);
+}
+
+.title {
+  text-align: center;
+  color: var(--md-sys-color-primary);
+  font-size: 46px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+/* acordeon */
+.accordionItem {
+  background: var(--md-sys-color-surface);
+  border-radius: 12px;
+  margin: 20px 420px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  background: var(--md-sys-color-primary);
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--md-sys-color-on-primary);
+}
+
+.accordionHeader:hover {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.accordionContent {
+  padding: 1rem;
+  border-top: 1px solid var(--md-sys-color-on-surface);
+}
+
+/* productos */
+.sectionTitle {
+  margin-left: 30px;
+}
+.productItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  background: var(--md-sys-color-background);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.productItem img {
+  width: auto;
+  height: 64px;
+  object-fit: contain;
+}
+
+.productInfo {
+  flex: 1;
+}
+
+.productInfo h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+  color: var(--md-sys-color-primary);
+}
+
+.productInfo p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  color: var(--md-sys-color-on-surface);
+}
+
+.productPrice {
+  font-weight: 700;
+  color: var(--md-sys-color-primary);
+}
+
+
+
+.actions {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cantidad {
+  color: var(--md-sys-color-on-background);
+}
+
+.addButton {
+  margin-top: 8px;
+}
+
+.precio {
+  color: var(--md-sys-color-primary);
+  margin: 4px 0;
+}
+
+.materialIcons {
+  margin-right: 25px;
+}
+
+@media only screen and (min-width: 601px) {
+  
+}
