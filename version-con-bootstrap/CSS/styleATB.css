@@ -1,0 +1,10 @@
+body { background-color: #212529; color: white; }
+    .gold-logo { height: 60px; }
+    .ingrediente-img { width: 80px; }
+    .preview-stack img { margin: 2px 0; width: 100px; }
+    .list-group-item { background-color: #343a40; border: none; }
+.icon-bar {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}

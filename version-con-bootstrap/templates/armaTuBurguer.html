@@ -1,0 +1,182 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Arma tu Burguer | Gold Burguer</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="../CSS/styleATB.css">
+
+    </head>
+    <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-warning navbar-light p-1 shadow-lg sticky-top">
+        <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center fw-bold text-dark fs-3 me-auto" href="../index.html">
+            <img src="../IMG/logo-gold.png" alt="Logo Gold" class="gold-logo img-fluid p-2" />
+            GOLD BURGUER
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="armaTuBurguer.html">Arma tu burguer</a></li>
+            <li class="nav-item"><a class="nav-link" href="sobreNosotros.html">Sobre Nosotros</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Productos</a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="hamburguesas.html">Hamburguesas</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="bebidas.html">Bebidas</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="papas.html">Papas Fritas</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="extras.html">Extras</a></li>
+            </ul>
+            <div class="d-flex">
+            <a href="ubicacion.html" class="btn btn-dark me-2 rounded" aria-label="Ubicación">
+                <i class="bi bi-geo-alt-fill"></i>
+            </a>
+            <a href="carrito.html" class="btn btn-dark rounded" aria-label="Carrito">
+                <i class="bi bi-cart-fill"></i>
+            </a>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <!--Barra de iconos-->
+        <header class="container-fluid text-center mb-1 pt-5">
+
+            <article class="d-flex justify-content-center align-items-center flex-wrap gap-4 ">
+                <a href="hamburguesas.html"
+                    class="text-decoration-none text-white d-flex flex-column align-items-center">
+                    <img src="../IMG/icono-burguer.png" alt="Icono Hamburguesa" class="icon-bar mb-2">
+                    <small class="fw-bold">Burguers</small>
+                </a>
+
+                <a href="papas.html"
+                    class="text-decoration-none text-white d-flex flex-column align-items-center">
+                    <img src="../IMG/icono-papas.png" alt="Icono Papas Fritas" class="icon-bar  mb-2">
+                    <small class="fw-bold">Fries</small>
+                </a>
+
+                <a href="bebidas.html"
+                    class="text-decoration-none text-white d-flex flex-column align-items-center">
+                    <img src="../IMG/icono-gaseosa.png" alt="Icono Bebidas" class="icon-bar mb-2">
+                    <small class="fw-bold">Bebidas</small>
+                </a>
+
+            </article>
+        </header>
+
+    <!-- Main -->
+    <main class="container my-5">
+        <h1 class="text-warning text-center mb-4">Arma tu Burguer</h1>
+    <!-- Ingredientes -->
+    <form id="burgerForm" class="row g-3 justify-content-center">
+    <div class="col-md-6">
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="Doble Carne" id="carne"><label class="form-check-label" for="carne">Doble Carne</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="Queso Cheddar" id="extra_cheddar"><label class="form-check-label" for="cheddar">Queso Cheddar</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="bacon" id="extra_bacon"><label class="form-check-label" for="bacon">Bacon</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="Lechuga" id="lechuga"><label class="form-check-label" for="lechuga">Lechuga</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="Tomate" id="tomate"><label class="form-check-label" for="tomate">Tomate</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" value="salsa" id="extra_salsa"><label class="form-check-label" for="salsa">salsa</label></div>
+    </div>
+    </form>
+
+    <!-- Botones -->
+    <div class="text-center mt-4">
+    <button class="btn btn-warning fw-bold me-2" onclick="mostrarIngredientes()">Vista Previa</button>
+    <button class="btn btn-success fw-bold" onclick="agregarAlCarrito()">Agregar al Carrito</button>
+    </div>
+
+    <!-- Vista Previa -->
+    <section id="preview" class="text-center mt-5">
+    <h4 class="text-warning">Vista Previa</h4>
+    <div class="preview-stack" id="previewStack">
+        <img src="../IMG/pan_arriba.jpg" alt="Pan arriba" />
+        <!-- Ingredientes se insertan aquí -->
+        <img src="../IMG/pan_abajo.png" alt="Pan abajo" />
+    </div>
+    </section>
+
+    <!-- Carrito -->
+    <section id="carrito" class="mt-5">
+    <h3 class="text-warning text-center mb-3">🛒 Carrito</h3>
+    <ul id="carritoLista" class="list-group"></ul>
+    </section>
+
+    <!-- Script -->
+    <script>
+    function mostrarIngredientes() {
+        const stack = document.getElementById('previewStack');
+        const abajo = stack.querySelector('img:last-child');
+
+        // Limpiar ingredientes previos
+        while (stack.children.length > 2) {
+        stack.removeChild(stack.children[1]);
+        }
+
+        document.querySelectorAll('#burgerForm input:checked').forEach(el => {
+        const img = document.createElement('img');
+        img.src = `../IMG/${el.id}.jpg`; // Ej: IMG/cheddar.png
+        img.alt = el.value;
+        img.className = 'ingrediente-img';
+        stack.insertBefore(img, abajo);
+        });
+    }
+
+    function agregarAlCarrito() {
+        const ingredientes = [];
+        document.querySelectorAll('#burgerForm input:checked').forEach(el => {
+        ingredientes.push(el.value);
+        });
+
+        if (ingredientes.length === 0) {
+        alert('Seleccioná al menos un ingrediente');
+        return;
+        }
+
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        carrito.push({ nombre: 'Burguer Personalizada', ingredientes });
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        mostrarCarrito();
+    }
+
+    function mostrarCarrito() {
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        const lista = document.getElementById('carritoLista');
+        lista.innerHTML = '';
+
+        carrito.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between align-items-center';
+        li.innerHTML = `
+            <div>
+            <strong>${item.nombre}</strong><br>
+            <small>${item.ingredientes.join(', ')}</small>
+            </div>
+            <button class="btn btn-sm btn-danger" onclick="eliminarDelCarrito(${index})">Eliminar</button>
+        `;
+        lista.appendChild(li);
+        });
+    }
+
+    function eliminarDelCarrito(index) {
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        carrito.splice(index, 1);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        mostrarCarrito();
+    }
+
+    // Mostrar carrito al cargar
+    mostrarCarrito();
+    </script>
